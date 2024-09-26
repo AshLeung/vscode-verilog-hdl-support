@@ -169,7 +169,7 @@ export class Ctags {
     );
     if (binPath !== 'none') {
       let command: string = binPath + '-R -f - --fields=+nKz --sort=no --excmd=n --fields-SystemVerilog=+{parameter}';
-      this.logger.info('Executing Command: ' + command);
+      this.logger.info('Executing Command: ' + filepath + command);
       try {
         const {stdout, stderr} = await exec(command);
         if(stdout) {
