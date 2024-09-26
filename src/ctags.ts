@@ -168,7 +168,7 @@ export class Ctags {
       vscode.workspace.getConfiguration().get('verilog.ctags.path', 'none')
     );
     if (binPath !== 'none') {
-      let command: string = binPath + '-R -f - --fields=+nKz --sort=no --excmd=n --fields-SystemVerilog=+{parameter};
+      let command: string = binPath + '-R -f - --fields=+nKz --sort=no --excmd=n --fields-SystemVerilog=+{parameter}';
       this.logger.info('Executing Command: ' + command);
       try {
         const {stdout, stderr} = await exec(command);
