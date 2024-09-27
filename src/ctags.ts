@@ -172,9 +172,9 @@ export class Ctags {
     );
     if (binPath !== 'none') {
       let command: string = binPath + ' -R -f - --fields=+nKz --sort=no --excmd=n ' + srcPath;
-      this.logger.info('Executing Command: ' + filepath + command);
+      this.logger.info('Executing Command: ' + filepath + ' ' + command);
       try {
-        const {stdout, stderr} = await exec(command);
+        const {stdout, stderr} = await exec(command, { maxBuffer: 5 * 1024 * 1024 });
         if(stdout) {
           return stdout.toString();
         }
