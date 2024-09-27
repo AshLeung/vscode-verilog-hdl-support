@@ -378,6 +378,12 @@
           "default": "none",
           "description": "A path to the installation of Universal Ctags."
         },
+        "verilog.ctags.srcpath": {
+          "scope": "window",
+          "type": "string",
+          "default": ".",
+          "description": "A path to the source code."
+        },
         "verilog.languageServer.svls.enabled": {
           "scope": "window",
           "type": "boolean",
